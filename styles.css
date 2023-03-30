@@ -27,6 +27,51 @@ footer p {
     font-size: .75em;
 }
 
+.scroll {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.scroll section {
+    margin: 10px;
+    position: relative;
+}
+
+.scroll div {
+    position: absolute;
+    top: 251px;
+    background-color: rgba(255,255,255,.75);
+    padding: 5px;
+    height:58px;
+    width: 358pxhh;
+}
+
+div h3 {
+    margin: 0;
+}
+
+dl {
+    display: flex;
+    width: 311px;
+    margin: 5px;
+}
+
+dt {
+    padding-right: 5px;
+}
+
+dd {
+    margin: 0px;
+}
+
+audio {
+    position: absolute;
+    bottom: 158px;
+    left: 5px;
+}
+
 ul {
     overflow: hidden;
     max-height: 0;
