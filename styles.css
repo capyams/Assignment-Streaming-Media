@@ -21,6 +21,11 @@ button {
     background-color: #590242;
     color: #ffffff;
 }
+
+nav {
+    display: flex;
+}
+
 h2, h3{
     font-size: 1em;
     text-transform: uppercase;
@@ -230,4 +235,17 @@ button {
     box-shadow: none;
     border: none;
     margin-left: 20px;
+}
+
+li:first-of-type, li:first-of-type a{
+    overflow: visible;
+    color: #ffffff;
+    display: block;
+    position: absolute;
+    top: 1px;
+    list-style-type: none;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 auto;
+    left: 0px;
 }
