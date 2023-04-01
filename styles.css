@@ -1,35 +1,86 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
 html {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #020659;
     color: #ffffff;
+    
 }
 
 body{
+    width: 375px;
     margin: 0 auto;
+    padding: 0 20px;
+    line-height: 1.5;
 }
 
 h1 {
     font-size: 1.25em;
 }
+
 .whitebg {
     background-color: #ffffff;
     color: #590242;
     padding: 10px;
     margin: 0px 0;
 }
+
 button {
     background-color: #590242;
     color: #ffffff;
 }
 
-nav {
-    display: flex;
-}
 
-h2, h3{
+h1, h2, h3{
     font-size: 1em;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: bold; 
 }
 
 p, dl, dd, button {
@@ -48,7 +99,7 @@ footer{
     text-align: center;
 }
 
-.scroll {
+/* .scroll {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     overflow-x: auto;
@@ -67,7 +118,7 @@ footer{
     padding: 5px;
     height:58px;
     width: 358px;
-}
+} */
 
 div h3 {
     margin: 0;
@@ -93,18 +144,67 @@ audio {
     left: 5px;
 }
 
+.header {
+    position: relative;
+    padding-top: 75px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    background-image: linear-gradient(to right, #2104d9, #000);
+}
+
 ul {
     overflow: hidden;
     max-height: 0;
     transition: max-height .2s ease-out;
+    list-style-type: none;
+    background-color: #2104D9;
+    width: 375px;
+    text-align: center;
+    padding:29px 0;
+    font-size: 1em;
+    position: absolute;
+    top: 0;
+    margin: 0 0 10px 0;
+    background-color: #030A8C;
+}
+
+.title{
+    visibility: visible;
+    font-size: 1.5em;
+    font-variant: small-caps;
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    margin: 0 0 10px 0;
+    background-color: #2104D9;
+}
+
+.navbar {
+    display: flex;
+}
+
+li {
+    position: relative;
+    margin-bottom: 20px;
+    top: 0;
+}
+
+li a {
+    text-decoration: none;
+    color:#ffffff;
+    position: relative;
+    padding-top: 0;
 }
 
 label {
     cursor: pointer;
     display: inline-block;
-    padding: 28px 20px;
+    padding: 28px 20px 28px 15px;
     position: relative;
     user-select: none;
+    z-index: 6;
 }
 
 label span {
@@ -140,6 +240,10 @@ input {
 
 input:checked ~ ul {
     max-height: 500px;
+    position: absolute;
+    z-index: 4;
+    padding: 29px 0;
+    overflow: visible;
 }
 
 input:checked ~ label span {
@@ -163,11 +267,148 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
         overflow: visible;
         position: absolute;
         top: 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 834px;
+        padding-top: 50px;
     }
+
+    .menu{
+        width: 834px;
+    }
+
+    .menu:hover {
+        background-color: #590242;
+    }
+
     label span, input {
         display: none;
+    }
+
+    main {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    body{
+        width: 834px;
+        margin: 0 auto;
+    }
+    li {
+        padding: 0 10px 5px 10px;
+    }
+
+    .header{
+        margin-top:20px;
+    }
+
+    #trending {
+        width: 814px;
+
+    }
+
+    #playlists {
+        width: 417px;
+    }
+
+    #curated {
+        width: 417px;
+    }
+
+    .scroll {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: auto;
+    }
+    
+    .scroll section {
+        margin: 10px;
+        position: relative;
+    }
+    
+    .scroll div {
+        position: absolute;
+        top: 251px;
+        background-color: rgba(255,255,255,.75);
+        padding: 5px;
+        height:58px;
+        width: 834px;
+    }
+
+    .yourplaylists, .curatedclass {
+        display: grid;
+        grid-template-columns: 1fr;
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 300px;
+    }
+    .yourplaylists section, .curatedclass section {
+        margin: 10px;
+        position: relative;
+
+    }
+
+    button {
+        float: right;
+    }
+    
+    button:hover {
+        background-color: #020659;
+    }
+
+    .buttons {
+        background-color: #ffffff;
+        height: 40px;
+        padding: 15px 20px;
+    }
+
+    .yourplaylists h3, .curatedclass h3 {
+        padding: 5px 0;
+    }
+    
+    .yourplaylists img, .curatedclass img {
+        float: left;
+    }
+
+    .yourplaylists div, .curated div {
+        position: absolute;
+        top: 251px;
+        background-color: rgba(255,255,255,.75);
+        padding: 5px;
+        width: 358px;
+    }
+
+}
+
+@media screen and (min-width:375px) and (max-width:833px)
+{
+    body {
+        width: 375px;
+        margin: 0 auto;
+    }
+
+    .scroll {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    
+    .scroll section {
+        margin: 10px;
+        position: relative;
+    }
+    
+    .scroll div {
+        position: absolute;
+        top: 251px;
+        background-color: rgba(255,255,255,.75);
+        padding: 5px;
+        height:58px;
+        width: 358px;
     }
 }
 
@@ -237,15 +478,3 @@ button {
     margin-left: 20px;
 }
 
-li:first-of-type, li:first-of-type a{
-    overflow: visible;
-    color: #ffffff;
-    display: block;
-    position: absolute;
-    top: 1px;
-    list-style-type: none;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0 auto;
-    left: 0px;
-}
